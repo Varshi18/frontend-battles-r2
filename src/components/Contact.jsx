@@ -145,7 +145,7 @@ function Contact() {
                 <motion.a
                   key={info.title}
                   href={info.link}
-                  className="glass rounded-2xl p-6 hover-lift group block"
+                  className="glass rounded-2xl p-6 hover-lift group block mb-6"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

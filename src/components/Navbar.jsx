@@ -72,7 +72,7 @@ function Navbar() {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="relative text-gray-300 hover:text-white transition-colors duration-300 font-medium"
+                className="relative text-gray-300 hover:text-white transition-colors duration-300 font-medium p-2"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}

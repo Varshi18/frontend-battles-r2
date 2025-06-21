@@ -17,20 +17,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    // Cursor tracking
+    const handleMouseMove = (e) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
     // Loading animation
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
 
-    // Smooth scrolling setup
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Global parallax effects
+    // Parallax effects
     gsap.utils.toArray('.parallax').forEach((section) => {
       gsap.to(section, {
-        yPercent: -20,
+        yPercent: 10, // Reduced for subtler effect
         ease: 'none',
         scrollTrigger: {
           trigger: section,
@@ -43,6 +47,7 @@ function App() {
 
     // Cleanup
     return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
       clearTimeout(timer);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -59,25 +64,25 @@ function App() {
         >
           <motion.h1
             className="text-4xl md:text-6xl font-bold gradient-text mb-8"
-            animate={{ 
+            animate={{
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
-            transition={{ 
-              duration: 3, 
+            transition={{
+              duration: 3,
               repeat: Infinity,
-              ease: "linear"
+              ease: 'linear',
             }}
           >
             INLIGHN TECH
           </motion.h1>
-          
+
           <div className="loading-dots">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
           </div>
-          
+
           <motion.p
             className="text-gray-400 mt-8"
             initial={{ opacity: 0 }}
@@ -93,10 +98,9 @@ function App() {
 
   return (
     <div className="relative bg-slate-900 text-white font-sans overflow-x-hidden">
-      <Cursor />
+      <Cursor x={cursorPos.x} y={cursorPos.y} />
       <ScrollIndicator />
       <FloatingElements />
-      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

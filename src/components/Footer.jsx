@@ -47,13 +47,9 @@ function Footer() {
 
   return (
     <footer className="bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-}} />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">\
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">\
+      <div className="absolute inset-0 opacity-5 bg-pattern"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, y: 50 }}
@@ -69,8 +65,6 @@ function Footer() {
                 Empowering the next generation of tech professionals through immersive internship programs and hands-on learning experiences.
               </p>
             </div>
-            
-            {/* Social Links */}
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -88,7 +82,6 @@ function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +106,6 @@ function Footer() {
             </ul>
           </motion.div>
 
-          {/* Programs */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +130,6 @@ function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +149,6 @@ function Footer() {
                   <p className="text-gray-400">info@inlighntech.com</p>
                 </div>
               </div>
-              
               <div className="flex items-start space-x-3">
                 <div className="w-5 h-5 text-green-500 mt-1">
                   <svg fill="currentColor" viewBox="0 0 20 20">
@@ -169,7 +159,6 @@ function Footer() {
                   <p className="text-gray-400">+91 9368842663</p>
                 </div>
               </div>
-              
               <div className="flex items-start space-x-3">
                 <div className="w-5 h-5 text-purple-500 mt-1">
                   <svg fill="currentColor" viewBox="0 0 20 20">
@@ -187,7 +176,6 @@ function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
         <motion.div
           className="py-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
@@ -196,9 +184,8 @@ function Footer() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; 2025 INLIGHN TECH. All rights reserved.
+            © 2025 INLIGHN TECH. All rights reserved.
           </p>
-          
           <div className="flex space-x-6 text-sm">
             <motion.a
               href="#"
