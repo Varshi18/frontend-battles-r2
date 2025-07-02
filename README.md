@@ -29,8 +29,7 @@ Participants were tasked with redesigning [inlighntech.com](https://www.inlighnt
 
 ## Deployment
 
-* Live Preview: \[Insert your deployed link here]
-* GitHub Repository: \[Insert your GitHub repo link here]
+* Live Preview:https://frontend-battles-r2.vercel.app/
 
 ## No License
 
